@@ -1,9 +1,10 @@
-import Dependencies._
+import Dependencies.*
+import sbt.Keys.libraryDependencies
 
-ThisBuild / scalaVersion     := "2.13.15"
-ThisBuild / version          := "0.1.0-SNAPSHOT"
+ThisBuild / scalaVersion := "2.13.15"
+ThisBuild / version      := "0.1.0-SNAPSHOT"
 
-Compile / compile / scalacOptions ++= Seq(
+Compile / scalacOptions ++= Seq(
   "-Werror",
   "-Wdead-code",
   "-Wextra-implicit",
@@ -13,7 +14,7 @@ Compile / compile / scalacOptions ++= Seq(
   "-Xlint",
   "-Xlint:-byname-implicit",
   "-Xlint:-implicit-recursion",
-  "-unchecked",
+  "-unchecked"
 )
 
 lazy val root = (project in file("."))
@@ -21,5 +22,6 @@ lazy val root = (project in file("."))
     name := "hw9",
     libraryDependencies ++= Seq(
       scalaTest % Test
-    ) ++ catsEffect
+    ),
+    libraryDependencies ++= catsEffect
   )
