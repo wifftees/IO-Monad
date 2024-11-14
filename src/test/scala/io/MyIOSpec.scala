@@ -6,7 +6,6 @@ import org.scalatest.matchers.should.Matchers
 import scala.util.{Failure, Try}
 
 class MyIOSpec extends AnyFlatSpec with Matchers {
-  import cats.effect.IO
 
   private val exception   = new RuntimeException("Oops")
   private val largeNumber = 100000
